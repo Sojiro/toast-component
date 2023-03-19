@@ -20,8 +20,10 @@ function ToastProvider({ children }) {
     setToasts((toasts) => toasts.filter((toast) => toast.id !== id));
   };
 
+  const dismissAll = () => setToasts([]);
+
   const value = React.useMemo(
-    () => ({ toasts, createToast, deleteToast }),
+    () => ({ toasts, createToast, deleteToast, dismissAll }),
     [toasts]
   );
   return (
